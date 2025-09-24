@@ -1,0 +1,76 @@
+/* Background aninmation styles */
+body {
+  background: linear-gradient(-45deg,
+              #000428,   /* azul muy oscuro */
+              #004e92,   /* azul profundo */
+              #000000,   /* negro */
+              #0f2027,   /* verde azulado oscuro */
+              #2c5364);  /* azul cian */
+  background-size: 400% 400%;
+  animation: gradient 25s ease infinite;
+}
+
+@keyframes gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Navigation styles */
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: min-content;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+header > nav {
+  grid-column: 3;
+}
+
+header > nav > ol {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+}
+
+header > nav > ol > a {
+  color: wheat;
+  text-decoration: none;
+}
+
+header > nav > ol > a:hover {
+  transform: scale(1.1);
+}
+
+/* Footer styles */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+footer > a > img {
+  height: 30px;
+  width: 30px;
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+footer > a > img:hover {
+    transform: scale(1.1);
+}
+
+.icon-white {
+  filter: brightness(0) invert(1);
+}

@@ -1,0 +1,89 @@
+html, body {
+    height: 100%;
+  margin: 0;
+  padding: 1rem;
+  font-family: "Cutive Mono", monospace;
+  color: white;
+  display: grid;
+  overflow: hidden;
+  grid-template-rows: auto 1fr auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.personal_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal_info > img {
+  border-radius: 10%;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+}
+
+.profile h2 {
+    text-align: justify;
+}
+
+.name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  grid-column-start: 2;
+}
+
+/* .technologies {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 1;
+}
+
+.icon-hover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+}
+
+.icon-hover img {
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+  width: 25px;
+  height: 25px;
+}
+
+.icon-hover .label {
+  margin-top: 8px;
+  font-size: 14px;
+  color: white;
+  opacity: 0; 
+  transition: opacity 0.3s ease-in-out;
+}
+
+.icon-hover:hover img {
+  transform: scale(1.1); 
+}
+
+.icon-hover:hover .label {
+  opacity: 1; 
+} */
