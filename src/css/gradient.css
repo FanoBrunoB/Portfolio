@@ -23,7 +23,11 @@ header {
   grid-template-columns: 1fr 1fr 1fr;
   height: min-content;
   align-items: center;
-  margin-bottom: 3rem;
+}
+
+header > div {
+  display: flex;
+  gap: 2rem;
 }
 
 header > nav {

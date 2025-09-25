@@ -1,0 +1,151 @@
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  font-family: "Cutive Mono", monospace;
+  color: white;
+  display: grid;
+  overflow: hidden;
+  grid-template-rows: auto 1fr auto;
+}
+
+.container {
+  height: min-content;
+  max-height: 34vw;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.section-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 10px;
+}
+
+.section-container h3 {
+  text-align: center;
+}
+
+.section-container > div {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.section-container .grid-adjustment {
+  grid-area: 1 / 1 / 3 / 3;
+}
+
+/* ====== Tarjetas estilo portfolio elegante ====== */
+.section-container .card {
+  position: relative;
+  border: none;
+  border-radius: 26px;
+  padding: clamp(16px, 2.6vw, 28px);
+  isolation: isolate;
+  width: 27vw;
+}
+
+/* Borde degradado con máscara */
+.section-container .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; /* grosor del borde */
+  background: linear-gradient(135deg, #5cc0ff, #8b5cff, #ff6ea7);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Empresa (primer h3 dentro de la card) */
+.section-container .card > h3 {
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  font-size: clamp(18px, 2.6vw, 24px);
+  line-height: 1.15;
+  margin: 4px 0 18px;
+}
+
+/* Base para h4 */
+.section-container .card > h4 {
+  margin: 0;
+  line-height: 1.35;
+  font-weight: 600;
+  font-size: clamp(14px, 2.2vw, 18px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* CARGO = h4 impar (1°, 3°, 5°...) */
+.section-container .card > h4:nth-of-type(odd) {
+  background: linear-gradient(135deg, #5cc0ff, #8b5cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-top: 6px;
+  position: relative;
+}
+
+.contact-card {
+  width: fit-content !important;
+}
+
+.contact-card > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-card  h2 {
+  background: linear-gradient(135deg, #5cc0ff, #8b5cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; 
+}
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.nav__inner {
+  display: flex;
+  justify-content: center;
+  padding: 18px 22px;
+}
+.menu {
+  position: relative;
+  display: flex;
+  gap: 56px;
+  list-style: none;
+  padding: 0px 0px 10px 0px;
+  margin: 0;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, #3ec5ff, #9c6bff, #ff6ea9) 1;
+}
+.navlink {
+  position: relative;
+  text-decoration: none;
+  color: #f4f7fb;
+  font-size: 22px;
+}
+.navlink:hover {
+  opacity: 0.9;
+}
