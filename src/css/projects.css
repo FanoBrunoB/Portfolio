@@ -1,0 +1,114 @@
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  font-family: "Cutive Mono", monospace;
+  color: white;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.logo-lego {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-via {
+  height: 50px;
+}
+
+.container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 20px;
+  height: min-content;
+  max-height: 40vw;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+main img,
+main iframe,
+main video {
+  width: 25vw;
+  height: 16vw;
+}
+
+.project {
+  display: grid;
+  place-items: center;
+  width: 25vw;
+  height: 16vw;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Asegura el orden de apilamiento */
+.project .media {
+  grid-area: 1 / 1;
+  z-index: 0;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+.project img,
+.project iframe,
+.project video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.project .overlay {
+  grid-area: 1 / 1;
+  z-index: 1;          
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  background: rgba(0,0,0,.6);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  /* Evita glitches de composición en algunos navegadores */
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.project p{
+    text-align: justify;
+}
+
+.project a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Hover estable */
+.project:hover img,
+.project:hover iframe,
+.project:hover video {
+  filter: grayscale(100%) brightness(0.7);
+}
+
+.project:hover .overlay {
+  opacity: 1;
+}

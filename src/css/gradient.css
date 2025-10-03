@@ -1,19 +1,27 @@
 /* Background aninmation styles */
 body {
-  background: linear-gradient(-45deg,
-              #000428,   /* azul muy oscuro */
-              #004e92,   /* azul profundo */
-              #000000,   /* negro */
-              #0f2027,   /* verde azulado oscuro */
-              #2c5364);  /* azul cian */
+  background: linear-gradient(
+    -45deg,
+    #000428,
+    #004e92,
+    #000000,
+    #0f2027,
+    #2c5364
+  );
   background-size: 400% 400%;
   animation: gradient 25s ease infinite;
 }
 
 @keyframes gradient {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Navigation styles */
@@ -43,7 +51,7 @@ header > nav > ol {
 }
 
 header > nav > ol > a {
-  color: wheat;
+  color: white;
   text-decoration: none;
 }
 
@@ -72,9 +80,9 @@ footer > a > img {
 }
 
 footer > a > img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .icon-white {
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1) !important;
 }

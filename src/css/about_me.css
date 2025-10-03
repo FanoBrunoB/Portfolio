@@ -9,6 +9,15 @@ html, body {
   grid-template-rows: auto 1fr auto;
 }
 
+.logo-lego{
+    width: 50px;
+    height: 50px;
+}
+
+.logo-via{
+    height: 50px;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -50,40 +59,3 @@ html, body {
   align-items: center;
   grid-column-start: 2;
 }
-
-/* .technologies {
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 1;
-}
-
-.icon-hover {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-  position: relative;
-}
-
-.icon-hover img {
-  height: auto;
-  transition: transform 0.2s ease-in-out;
-  width: 25px;
-  height: 25px;
-}
-
-.icon-hover .label {
-  margin-top: 8px;
-  font-size: 14px;
-  color: white;
-  opacity: 0; 
-  transition: opacity 0.3s ease-in-out;
-}
-
-.icon-hover:hover img {
-  transform: scale(1.1); 
-}
-
-.icon-hover:hover .label {
-  opacity: 1; 
-} */
