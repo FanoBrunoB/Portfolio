@@ -58,11 +58,9 @@ main video {
 }
 
 .video {
-    width: 100%;
-    height: 100%;
-    
+  width: 100%;
+  height: 100%;
 }
-
 
 .project img,
 .project iframe,
@@ -76,14 +74,14 @@ main video {
 
 .project .overlay {
   grid-area: 1 / 1;
-  z-index: 1;          
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 10px;
   text-align: center;
-  background: rgba(0,0,0,.6);
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -93,13 +91,13 @@ main video {
   transform: translateZ(0);
 }
 
-.project p{
-    text-align: justify;
+.project p {
+  text-align: justify;
 }
 
-.project a{
-    text-decoration: none;
-    color: white;
+.project a {
+  text-decoration: none;
+  color: white;
 }
 
 /* Hover estable */
@@ -111,4 +109,98 @@ main video {
 
 .project:hover .overlay {
   opacity: 1;
+}
+
+.first-video {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.second-video {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.third-video {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.fourth-video {
+  grid-column: 4;
+  grid-row: 4;
+}
+
+.fifth-video {
+  grid-column: 3;
+  grid-row: 5;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-lego,
+  .logo-via {
+    display: none;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    /* Quitar el límite de altura y el scroll interno en mobile */
+    max-height: 130vw;
+    height: auto;
+    overflow: scroll;
+    gap: 32px;
+    grid-template-rows: auto;
+  }
+
+  /* Las tarjetas y su media ocupan todo el ancho y respetan 16:9 */
+  .project {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .project .media,
+  .project img,
+  .project iframe,
+  .project video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* El texto no quede super apretado */
+  .project p {
+    text-align: left;
+  }
+
+  /* Hover no existe en táctil: usa focus-within (tap) */
+  .project:focus-within .overlay {
+    opacity: 1;
+  }
+
+  /* Permitir mostrar overlay al tocar (tecla/tab o tap) */
+  .project {
+    outline: none;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .first-video,
+  .second-video,
+  .third-video,
+  .fourth-video,
+  .fifth-video {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .project .overlay {
+    gap: 8px;
+  }
+
+  .project .overlay p {
+    margin: 0;
+  }
 }
