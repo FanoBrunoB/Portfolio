@@ -51,7 +51,6 @@ main video {
   cursor: pointer;
 }
 
-/* Asegura el orden de apilamiento */
 .project .media {
   grid-area: 1 / 1;
   z-index: 0;
@@ -75,7 +74,7 @@ main video {
 .project .overlay {
   grid-area: 1 / 1;
   z-index: 1;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -85,10 +84,6 @@ main video {
   color: white;
   opacity: 0;
   transition: opacity 0.3s ease;
-
-  /* Evita glitches de composición en algunos navegadores */
-  backface-visibility: hidden;
-  transform: translateZ(0);
 }
 
 .project p {
@@ -100,39 +95,59 @@ main video {
   color: white;
 }
 
-/* Hover estable */
-.project:hover img,
-.project:hover iframe,
-.project:hover video {
-  filter: grayscale(100%) brightness(0.7);
+.project-decription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.project:hover .overlay {
-  opacity: 1;
+.project-decription a {
+  color: white;
+  text-decoration: none;
 }
 
-.first-video {
+.first-project {
   grid-column: 3;
   grid-row: 1;
 }
+.first-project-description {
+  grid-column: 4;
+  grid-row: 1;
+}
 
-.second-video {
+.second-project {
   grid-column: 4;
   grid-row: 2;
 }
+.second-project-description {
+  grid-column: 3;
+  grid-row: 2;
+}
 
-.third-video {
+.third-project {
   grid-column: 3;
   grid-row: 3;
 }
+.third-project-description {
+  grid-column: 4;
+  grid-row: 3;
+}
 
-.fourth-video {
+.fourth-project {
   grid-column: 4;
   grid-row: 4;
 }
-
-.fifth-video {
+.fourth-project-description {
   grid-column: 3;
+  grid-row: 4;
+}
+
+.fifth-project {
+  grid-column: 3;
+  grid-row: 5;
+}
+.fifth-project-description {
+  grid-column: 4;
   grid-row: 5;
 }
 
@@ -144,7 +159,6 @@ main video {
 
   .container {
     grid-template-columns: 1fr;
-    /* Quitar el límite de altura y el scroll interno en mobile */
     max-height: 130vw;
     height: auto;
     overflow: scroll;
@@ -152,11 +166,11 @@ main video {
     grid-template-rows: auto;
   }
 
-  /* Las tarjetas y su media ocupan todo el ancho y respetan 16:9 */
   .project {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
+    outline: none;
   }
 
   .project .media,
@@ -168,39 +182,35 @@ main video {
     object-fit: cover;
   }
 
-  /* El texto no quede super apretado */
   .project p {
     text-align: left;
   }
 
-  /* Hover no existe en táctil: usa focus-within (tap) */
-  .project:focus-within .overlay {
-    opacity: 1;
-  }
-
-  /* Permitir mostrar overlay al tocar (tecla/tab o tap) */
-  .project {
-    outline: none;
-  }
-
-  .container {
-    grid-template-columns: 1fr;
-  }
-
-  .first-video,
-  .second-video,
-  .third-video,
-  .fourth-video,
-  .fifth-video {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
   .project .overlay {
+    display: flex ;
     gap: 8px;
+    opacity: 0;
   }
 
   .project .overlay p {
     margin: 0;
+  }
+
+  .project:focus-within .overlay,
+  .project .overlay:focus-within {
+    opacity: 1;
+  }
+
+  .project-decription {
+    display: none;
+  }
+
+  .first-project,
+  .second-project,
+  .third-project,
+  .fourth-project,
+  .fifth-project {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
