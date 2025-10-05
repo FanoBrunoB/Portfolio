@@ -51,12 +51,16 @@ header > nav > ol {
   margin: 0;
 }
 
-header > nav > ol > a {
+header > nav > ol > li {
+  list-style: none;
+}
+
+header > nav > ol > li > a {
   color: white;
   text-decoration: none;
 }
 
-header > nav > ol > a:hover {
+header > nav > ol > li:hover {
   transform: scale(1.1);
 }
 

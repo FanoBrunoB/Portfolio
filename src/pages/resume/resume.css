@@ -95,25 +95,13 @@ h2 {
 
 .section-container .card {
   position: relative;
-  border: none;
   border-radius: 26px;
   padding: clamp(16px, 2.6vw, 28px);
-  isolation: isolate;
   width: 27vw;
-}
-
-.section-container .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 2px; /* grosor del borde */
-  background: linear-gradient(135deg, #5cc0ff, #8b5cff, #ff6ea7);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  pointer-events: none;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#070c10, #070c10) padding-box,
+    linear-gradient(135deg, #5cc0ff, #8b5cff, #ff6ea7) border-box;
 }
 
 /* Company */
