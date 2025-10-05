@@ -10,43 +10,13 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-.logo-lego {
-  width: 50px;
-  height: 50px;
-}
-
+.logo-lego,
 .logo-via {
   height: 50px;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.personal_info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.personal_info > img {
-  border-radius: 10%;
-  width: 464px;
-  height: 400px;
-}
-
-.profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 75%;
-}
-
-.profile h2 {
-  text-align: justify;
+.logo-lego {
+  width: 50px;
 }
 
 .name {
@@ -55,37 +25,64 @@ body {
   justify-items: center;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.profile-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-picture > img {
+  border-radius: 10%;
+  width: 464px;
+  height: 400px;
+}
+
+.profile-description {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.profile-description h2 {
+  text-align: justify;
+}
+
 @media screen and (max-width: 768px) {
   .logo-lego,
   .logo-via {
     display: none;
   }
 
-  .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    max-height: 500px;
-    overflow: scroll;
-  }
-
-  .personal_info {
-    margin-bottom: 10px;
-  }
-
-  .personal_info > img {
-    width: 232px;
-    height: 200px;
-  }
-
   .name {
     grid-template-columns: 1fr;
   }
 
-  .profile {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    max-height: 480px;
+    overflow: scroll;
+  }
+
+  .profile-picture {
+    margin-bottom: 10px;
+  }
+
+  .profile-picture > img {
+    width: 232px;
+    height: 200px;
+  }
+
+  .profile-description {
     width: 100%;
   }
 
-  .profile h2 {
+  .profile-description h2 {
     text-align: start;
   }
 }
