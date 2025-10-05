@@ -109,9 +109,10 @@ h2 {
   border-radius: inherit;
   padding: 2px; /* grosor del borde */
   background: linear-gradient(135deg, #5cc0ff, #8b5cff, #ff6ea7);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
-  mask-composite: exclude;
   pointer-events: none;
 }
 
@@ -165,12 +166,11 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
-
   .logo-lego,
   .logo-via {
     display: none;
   }
-  
+
   .menu {
     flex-direction: column;
     gap: 0;
@@ -199,7 +199,7 @@ h2 {
     width: auto;
   }
 
-  .contact-card h2{
+  .contact-card h2 {
     font-size: 1.2em;
   }
 }
